@@ -11,9 +11,6 @@ nu = 1.0001; %parameter of the norm
 
 load("Data/UU_discrete_diagram.mat")
 
-it_max = 200;
-tol = 1e-15;
-
 Sigma = UU_refine(1,1:end);
 
 %Initialisation of the list of index where the theorem
