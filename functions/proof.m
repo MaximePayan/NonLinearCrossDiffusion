@@ -138,5 +138,6 @@ if test1 < test2
     end
 else
     disp '2Y*Z2 >= (1-Z1)^2 : not good'
+    r_min = nan; r_max = nan;
 end
 end
