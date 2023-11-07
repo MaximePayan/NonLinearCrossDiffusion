@@ -77,3 +77,17 @@ else
 end
 
 [Y,Z1,Z2,r_min,r_max] = proof(a,b,sigma,eps,nu,u,gv,gpv,r,gpv_r,gppv_r,F,DF);
+%% Figure
+fig = false;
+if fig
+    plot_cos(U(1:N_out),a,b,100,'r--',2)
+    hold on
+    plot_cos(U(N_out+1:2*N_out),a,b,100,'b',2)
+    xlim([a,b])
+    ylabel('$y$','Interpreter','latex','Rotation',0)
+    xlabel('$x$', 'Interpreter', 'latex')
+    legend('u','v')
+    title("Solution")
+    set(gca,'FontSize',20)
+    axis square
+end
