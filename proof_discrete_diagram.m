@@ -68,7 +68,7 @@ for ii=1:length(II)
     disp(ii)
 end
 %% Figure
-fig = false;
+fig = true;
 if fig
 UU0_refine = UU_refine(2,:)+2*sum(UU_refine(3:N+1,:),1);
 % Bifurcation is obtained in the numerical continuation, it contains the
@@ -81,25 +81,29 @@ B0 = B0(abs(B0)<10);
 % bifurcation
 g1 = scalar_eval(1,frac_data{1})/scalar_eval(1,frac_data{2});
 gp1 = scalar_eval(1,frac_data{3})/scalar_eval(1,frac_data{4});
-Spoints = bifurc_points_11(g1,gp1,eps,l,false);
+
 
 figure(2)
 clf(2,'reset')
 plot(Sigma(Itrue),UU0_refine(Itrue),Color=[0.47,0.67,0.19],Marker='.', ...
     LineStyle='None',LineWidth=0.1,MarkerSize=9,DisplayName='validated solution')
 hold on
+%plot(Sigma(Ifalse),UU0_refine(Ifalse),'.r',DisplayName='unvalisated solution')
 plot(Bs,B0,Color=[0.49,0.18,0.56],Marker='o',LineStyle='None', ...
     LineWidth=2,MarkerSize=10, DisplayName='bifurcation numerically detected')
 if exist('intval','file')
+    g1 = intval(g1); gp1 = intval(gp1);
+    Spoints = bifurc_points_11(g1,gp1,eps,l,false);
     for i=1:length(Spoints)
         plot([Spoints(i).inf,Spoints(i).sup],[1,1],Color=[1.00,0.41,0.16],Marker='None',...
             LineStyle='-',LineWidth=2,HandleVisibility='off')
     end
     plot(Spoints.mid,ones(size(Spoints)),Color=[1.00,0.41,0.16],Marker='*',...
-        LineStyle='None',LineWidth=2,MarkerSize=10,DisplayName='bifurcation theoreticaly detected')
+        LineStyle='None',LineWidth=2,MarkerSize=10,DisplayName='bifurcation theoretically detected')
 else
+    Spoints = bifurc_points_11(g1,gp1,eps,l,false);
     plot(Spoints,ones(size(Spoints)),Color=[1.00,0.41,0.16],Marker='*',...
-        LineStyle='None',LineWidth=2,MarkerSize=10,DisplayName='bifurcation theoreticaly detected')
+        LineStyle='None',LineWidth=2,MarkerSize=10,DisplayName='bifurcation theoretically detected')
 end
 legend
 xlabel('\sigma','Rotation',0,'FontSize',18,'VerticalAlignment','bottom');
