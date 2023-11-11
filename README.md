@@ -1,5 +1,6 @@
 # NonLinearCrossDiffusion
-Related to the paper Breden Payan 2023 \
+Related to the paper Breden Payan 2023, _Computer-assisted proofs for the many steady states of a
+chemotaxis model with local sensing_ \
 Download the zip file associated to the GitHup environnement \
 Run Matlab and Intlab - https://www.tuhh.de/ti3/rump/intlab/ \
 To prove the Theorem 1.1, run proof_frac_rat.m \
