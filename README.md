@@ -1,7 +1,7 @@
 # NonLinearCrossDiffusion
 Related to the paper Breden Payan 2023 \
 Download the zip file associated to the GitHup environnement \
-Run Matlab and Intlab \
+Run Matlab and Intlab - https://www.tuhh.de/ti3/rump/intlab/ \
 To prove the Theorem 1.1, run proof_frac_rat.m \
 To prove the Theorem 1.2, run proof_WX.m \
 To prove the Theorem 1.3, run proof_dicrete_diagram.m \
